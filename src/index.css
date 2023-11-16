@@ -1,3 +1,14 @@
+.tittle{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .counter{
     color: purple;
+}
+.increaseBtn{
+    border-radius: 5px;
+    border-color: purple;
+    background-color: rgb(255, 184, 255);
+    color: purple;
+    font-weight: bolder;
+    font-size: 10px;
 }
