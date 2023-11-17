@@ -19,9 +19,12 @@ const App = (props) => {
         updateCounter( counter - 1 );
     }
 
+    const isEven = counter % 2 === 0;
+
     return <>
         <h1 className='tittle'>Setting the same as in the example</h1>
         <h2 className='counter'>{counter}</h2>
+        <p className='even'>{ isEven ? 'Is a pair number' : 'Is an odd number' }</p>
         <button
             className='increaseBtn'
             onClick={ handleIncreaseClick }
