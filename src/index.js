@@ -10,13 +10,13 @@ const App = (props) => {
     console.log('status updated', counter ,'times');
 
     const handleIncreaseClick =() => {
-        updateCounter( counter + 1 );
+        updateCounter( prevState => prevState + 1);
     }
     const handleResetClick =() => {
         updateCounter( 0 );
     }
     const handleDecreaseClick =() => {
-        updateCounter( counter - 1 );
+        updateCounter( prevState => prevState - 1);
     }
 
     const isEven = counter % 2 === 0;
@@ -25,11 +25,12 @@ const App = (props) => {
         <h1 className='tittle'>Setting the same as in the example</h1>
         <h2 className='counter'>{counter}</h2>
         <p className='even'>{ isEven ? 'Is a pair number' : 'Is an odd number' }</p>
+
         <button
-            className='increaseBtn'
-            onClick={ handleIncreaseClick }
+            className='decreaseBtn'
+            onClick={ handleDecreaseClick }
         >
-            +
+            -
         </button>
         <button
             className='resetBtn'
@@ -38,10 +39,10 @@ const App = (props) => {
             Reset
         </button>
         <button
-            className='decreaseBtn'
-            onClick={ handleDecreaseClick }
+            className='increaseBtn'
+            onClick={ handleIncreaseClick }
         >
-            -
+            +
         </button>
     </>
 }
