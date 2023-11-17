@@ -4,7 +4,7 @@
 .counter{
     color: purple;
 }
-.increaseBtn{
+.increaseBtn, .resetBtn, .decreaseBtn{
     border-radius: 5px;
     border-color: purple;
     background-color: rgb(255, 184, 255);
