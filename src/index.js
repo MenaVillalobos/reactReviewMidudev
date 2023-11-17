@@ -29,13 +29,13 @@ const App = (props) => {
             +
         </button>
         <button
-            className='increaseBtn'
+            className='resetBtn'
             onClick={ handleResetClick }
         >
             Reset
         </button>
         <button
-            className='increaseBtn'
+            className='decreaseBtn'
             onClick={ handleDecreaseClick }
         >
             -
