@@ -22,28 +22,31 @@ const App = (props) => {
     const isEven = counter % 2 === 0;
 
     return <>
-        <h1 className='tittle'>Setting the same as in the example</h1>
-        <h2 className='counter'>{counter}</h2>
-        <p className='even'>{ isEven ? 'Is a pair number' : 'Is an odd number' }</p>
-
-        <button
-            className='decreaseBtn'
-            onClick={ handleDecreaseClick }
-        >
-            -
-        </button>
-        <button
-            className='resetBtn'
-            onClick={ handleResetClick }
-        >
-            Reset
-        </button>
-        <button
-            className='increaseBtn'
-            onClick={ handleIncreaseClick }
-        >
-            +
-        </button>
+        <div className='gralContainer'>
+                <h1 className='tittle'>React Review:</h1>
+                <h2 className='counter'>{counter}</h2>  
+                <p className='even'>{ isEven ? 'Is a pair number' : 'Is an odd number' }</p>
+            <div className='btnsContainer'>
+                <button
+                    className='decreaseBtn'
+                    onClick={ handleDecreaseClick }
+                >
+                    -
+                </button>
+                <button
+                    className='resetBtn'
+                    onClick={ handleResetClick }
+                >
+                    Reset
+                </button>
+                <button
+                    className='increaseBtn'
+                    onClick={ handleIncreaseClick }
+                >
+                    +
+                </button>
+            </div>
+        </div>
     </>
 }
 
