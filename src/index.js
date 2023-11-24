@@ -5,50 +5,35 @@ import './index.css'
 
 const rootElement = document.getElementById("root");
 
-const App = (props) => {
-    const [counter, updateCounter] = useState(0); //receives state's initial value as parameter
-    console.log('status updated', counter ,'times');
+const App = () => {
+    const [ leftCounter, setLeftCounter ] = useState(0);
+    const [ rightCounter, setRightCounter ] = useState(0);
 
-    const handleIncreaseClick =() => {
-        updateCounter( prevState => prevState + 1);
-    }
-    const handleResetClick =() => {
-        updateCounter( 0 );
-    }
-    const handleDecreaseClick =() => {
-        updateCounter( prevState => prevState - 1);
-    }
+    return (
+        <>
+            <div className='gralContainer'>
+                <div className='leftContainer'>
+                    <h2 className='leftScore' >
+                        {leftCounter}
+                    </h2>
+                    <button className='leftBtn' onClick={ () => setLeftCounter( leftCounter + 1 )}>
+                        LEFT
+                    </button>
+                </div>
 
-    const isEven = counter % 2 === 0;
-
-    return <>
-        <div className='gralContainer'>
-                <h1 className='tittle'>React Review:</h1>
-                <h2 className='counter'>{counter}</h2>  
-                <p className='even'>{ isEven ? 'Is a pair number' : 'Is an odd number' }</p>
-            <div className='btnsContainer'>
-                <button
-                    className='decreaseBtn'
-                    onClick={ handleDecreaseClick }
-                >
-                    -
-                </button>
-                <button
-                    className='resetBtn'
-                    onClick={ handleResetClick }
-                >
-                    Reset
-                </button>
-                <button
-                    className='increaseBtn'
-                    onClick={ handleIncreaseClick }
-                >
-                    +
-                </button>
+                <div className='rightContainer'>
+                    <button className='rightBtn' onClick={ () => setRightCounter( rightCounter + 1 )}>
+                        RIGHT
+                    </button>
+                    <h2 className='rightScore' >
+                        {rightCounter}
+                    </h2>
+                </div>
             </div>
-        </div>
-    </>
+        </>
+    )
 }
+
 
 ReactDOM.render(
     <App />,
