@@ -3,7 +3,12 @@ import ReactDOM from "react-dom";
 import { useState } from "react";
 import './index.css'
 
-const rootElement = document.getElementById("root");
+const WarningNotUsed = () => {
+    return <h2> ⚠️ Counter is not used yet ⚠️ </h2>
+};
+const ClicksList = ({ clicks }) => {
+    return <p> { clicks.join( ', ' ) }</p>
+};
 
 const App = () => {
     // const [ leftCounter, setLeftCounter ] = useState(0);
@@ -61,9 +66,10 @@ const App = () => {
                     <p>
                         Clicked { clicks.length } times
                     </p>
-                    <p>
-                        { clicks.join( ', ' ) }
-                    </p>
+                    { clicks.length === 0 
+                        ? <WarningNotUsed/> 
+                        : <ClicksList clicks = { clicks } />
+                    }
                 </div>
             </div>
         </>
@@ -71,6 +77,7 @@ const App = () => {
 }
 
 
+const rootElement = document.getElementById("root");
 ReactDOM.render(
     <App />,
     rootElement
