@@ -12,7 +12,6 @@ const App = () => {
     const [ counters, setCounters ] = useState({
         left: 0,
         right: 0,
-        clicked: 0,
         message: 'State message'
     });
     const [ clicks, setClicks ] = useState([]);
@@ -21,7 +20,6 @@ const App = () => {
         const newCountersState = {
             ...counters,
             left: counters.left + 1,
-            clicked: counters.clicked + 1
         }
         setCounters(newCountersState);
         setClicks( prevClicks => (
@@ -31,7 +29,6 @@ const App = () => {
         setCounters({
             ...counters,
             right: counters.right +1,
-            clicked: counters.clicked + 1
         })
         setClicks( prevClicks => (
             [ ...prevClicks, 'Right' ])
@@ -62,7 +59,7 @@ const App = () => {
                 </div>
                 <div className='msgsContainer'>
                     <p>
-                        Clicked { counters.clicked } times
+                        Clicked { clicks.length } times
                     </p>
                     <p>
                         { clicks.join( ', ' ) }
