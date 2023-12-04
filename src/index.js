@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import './index.css'
-import { click } from "@testing-library/user-event/dist/click";
 
 const WarningNotUsed = () => {
     return <h2> ⚠️ Counter is not used yet ⚠️ </h2>
