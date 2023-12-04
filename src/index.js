@@ -7,7 +7,6 @@ const WarningNotUsed = () => {
     return <h2> ⚠️ Counter is not used yet ⚠️ </h2>
 };
 const ClicksList = ({ clicks }) => {
-    debugger;
     return <p> { clicks.join( ', ' ) }</p>
 };
 
