@@ -10,15 +10,17 @@ const ClicksList = ({ clicks }) => {
     return <p> { clicks.join( ', ' ) }</p>
 };
 
+const INITIAL_COUNTER_STATE = {
+    left: 2,
+    right: 4,
+    message: 'State message'
+};
+
 const App = () => {
     // const [ leftCounter, setLeftCounter ] = useState(0);
     // const [ rightCounter, setRightCounter ] = useState(0);
 
-    const [ counters, setCounters ] = useState({
-        left: 0,
-        right: 0,
-        message: 'State message'
-    });
+    const [ counters, setCounters ] = useState( INITIAL_COUNTER_STATE );
     const [ clicks, setClicks ] = useState([]);
 
     const handleLeftClick = () => {
@@ -39,6 +41,11 @@ const App = () => {
             [ ...prevClicks, 'Right' ])
         );
     };
+
+    const handleReset = () => {
+        setCounters( INITIAL_COUNTER_STATE );
+        setClicks([]);
+    }
 
     return (
         <>
@@ -63,6 +70,9 @@ const App = () => {
                     </div>
                 </div>
                 <div className='msgsContainer'>
+                    <p>
+                        <button onClick={ handleReset }>RESET</button>
+                    </p>
                     <p>
                         Clicked { clicks.length } times
                     </p>
